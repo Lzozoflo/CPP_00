@@ -10,45 +10,39 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef Contact_H
-# define Contact_H
+# ifndef Contact_HPP
+# define Contact_HPP
 
 #include <iostream>
 
-/*
-first_name (prénom),
-last_name (nom de famille),
-nickname (surnom),
-phone_number (numéro de téléphone),
-darkest_secret (son plus lourd secret).
-*/
 
 class Contact {
-private:
+	private:
+	// {
+		std::string _FirstName;
+		std::string _LastName;
+		std::string _NickName;
+		std::string _PhoneNumber;
+		std::string _DarkestSecret;
+	// }
+	public:
+	// {
+		Contact( void );
+		~Contact( void );
 
-	std::string _FirstName;
-	std::string _LastName;
-	std::string _NickName;
-	std::string _PhoneNumber;
-	std::string _DarkestSecret;
+		bool		SetNewContact( void );
 
-public:
+		bool		SetFristName( void );
+		bool		SetLastName( void );
+		bool		SetNickName( void );
+		bool		SetPhoneNumber( void );
+		bool		SetDarkestSecret( void );
 
-	Contact( void );
-	~Contact( void );
 
-	bool		SetFristName( void );
-	bool		SetLastName( void );
-	bool		SetNickName( void );
-	bool		SetPhoneNumber( void );
-	bool		SetDarkestSecret( void );
-	bool		SetNewContact( void );
-
-	static void	FormatAndPut(std::string str);
-	void		PutContact( int index );
-	void		PutDataContact( int index );
-	void		func(void);
-
+		static void	FormatAndPut(std::string str);
+		void		PutContact( int index );
+		void		PutDataContact( int index );
+	// }
 };
 
 

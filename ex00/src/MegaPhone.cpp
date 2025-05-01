@@ -12,10 +12,9 @@ int main (int ac, char **av)
 		std::string arg = av[i];
 		for (size_t j = 0; j <= arg.length(); ++j)
 		{
-			std::cout << static_cast<char>(std::toupper(arg[j]));
+			std::cout << char(std::toupper(arg[j]));
 		}
 	}
 	std::cout << std::endl;
-	(void)av;
 	return (0);
 }

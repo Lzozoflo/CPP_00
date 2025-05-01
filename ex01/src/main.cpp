@@ -1,10 +1,19 @@
-#include <iostream>
-#include "PhoneBook/PhoneBook.hpp"
-#include "Utils/Utils.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/01 10:01:32 by fcretin           #+#    #+#             */
+/*   Updated: 2025/05/01 10:03:48 by fcretin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "PhoneBook.hpp"
 
 int main (void)
 {
 	PhoneBook pb;
-
 	return (0);
 }

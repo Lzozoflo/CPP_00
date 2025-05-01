@@ -1,32 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ContactFunc.cpp                                    :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/07 16:33:42 by fcretin           #+#    #+#             */
-/*   Updated: 2025/04/24 09:51:59 by fcretin          ###   ########.fr       */
+/*   Created: 2025/04/06 14:03:32 by fcretin           #+#    #+#             */
+/*   Updated: 2025/05/01 10:16:13 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Contact.hpp"
-#include "Utils/Utils.hpp"
+#include "Utils.hpp"
 #include <iomanip>
 
-void	Contact::func( void )
+/*---------------constructor-------------destructor----------------*/
+
+
+Contact::Contact( void ) : _FirstName("Default"), _LastName("Default"), _NickName("Default"), _PhoneNumber("07.78.80.08.14"), _DarkestSecret("Default")
 {
-	std::cout << BLUE << "func called" << RESET << std::endl;
+	std::cout << BLUE << "Constructor Contact called" << RESET << std::endl;
 	return ;
 }
+
+
+Contact::~Contact( void )
+{
+	std::cout << YELLOW << "Destructor Contact called" << RESET << std::endl;
+	return ;
+}
+
+
+/*---------------constructor-------------destructor----------------*/
+
+
+/*----set----*/
 
 
 bool	Contact::SetFristName( void )
 {
 	std::string str;
 
-	if (!Utils::SafeGetLine(str, "Frist Name : ", "Empty line write again."))
+	if (!Utils::SafeGetLine(str, "Frist Name : ", "Empty line write something please."))
 		return false;
 	this->_FirstName = str;
 	return true;
@@ -35,7 +50,7 @@ bool	Contact::SetFristName( void )
 
 bool	Contact::SetLastName( void )
 {
-	if (!Utils::SafeGetLine(this->_LastName, "Last Name : ", "Empty line write again."))
+	if (!Utils::SafeGetLine(this->_LastName, "Last Name : ", "Empty line write something please."))
 		return false;
 	return true;
 }
@@ -43,7 +58,7 @@ bool	Contact::SetLastName( void )
 
 bool	Contact::SetNickName( void )
 {
-	if (!Utils::SafeGetLine(this->_NickName, "Nick Name : ", "Empty line write again."))
+	if (!Utils::SafeGetLine(this->_NickName, "Nick Name : ", "Empty line write something please."))
 		return false;
 	return true;
 }
@@ -51,7 +66,7 @@ bool	Contact::SetNickName( void )
 
 bool	Contact::SetPhoneNumber( void )
 {
-	if (!Utils::SafeGetLine(this->_PhoneNumber, "Phone Number : ", "Empty line write again."))
+	if (!Utils::SafeGetLine(this->_PhoneNumber, "Phone Number : ", "Empty line write something please."))
 		return false;
 	return true;
 }
@@ -59,10 +74,13 @@ bool	Contact::SetPhoneNumber( void )
 
 bool	Contact::SetDarkestSecret( void )
 {
-	if (!Utils::SafeGetLine(this->_DarkestSecret, "Darkest Secret : ", "Empty line write again.(you will tell me..)"))
+	if (!Utils::SafeGetLine(this->_DarkestSecret, "Darkest Secret : ", "Empty line write something please.(you will tell me..)"))
 		return false;
 	return true;
 }
+
+
+/*----set----*/
 
 
 bool	Contact::SetNewContact( void )
@@ -84,6 +102,8 @@ bool	Contact::SetNewContact( void )
 }
 
 
+/*----func----*/
+
 void	Contact::FormatAndPut(std::string str)
 {
 	std::string tmp;
@@ -95,15 +115,13 @@ void	Contact::FormatAndPut(std::string str)
 	}
 	else
 		tmp = str;
-
 	std::cout << "|" << std::right << std::setw(10) << tmp ;
 }
 
 
 void Contact::PutContact( int index )
 {
-	std::cout << "|" ;
-	std::cout << index + 1;
+	std::cout << "|" << index + 1;
 	Contact::FormatAndPut(this->_FirstName);
 	Contact::FormatAndPut(this->_LastName);
 	Contact::FormatAndPut(this->_NickName);
