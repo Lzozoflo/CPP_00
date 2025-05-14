@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 14:03:32 by fcretin           #+#    #+#             */
-/*   Updated: 2025/05/01 10:16:13 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/05/03 12:39:35 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,8 +107,7 @@ bool	Contact::SetNewContact( void )
 void	Contact::FormatAndPut(std::string str)
 {
 	std::string tmp;
-	int len = str.length();
-	if (len > 10)
+	if (str.length() > 10)
 	{
 		tmp = str.substr(0, 9);
 		tmp.resize(10, '.');
